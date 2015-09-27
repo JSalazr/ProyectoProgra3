@@ -116,3 +116,120 @@
 1443341890 /home/segebre/Desktop/hackathon2015/WaterBarrier.h
 	"obstaculos.h"
 
+1443392043 source:/home/alejo/Documents/ProyectoProgra3/Box.cpp
+	"Box.h"
+
+1443392043 /home/alejo/Documents/ProyectoProgra3/Box.h
+
+1443392043 source:/home/alejo/Documents/ProyectoProgra3/Clean.cpp
+	"Clean.h"
+	"obstaculos.h"
+	"Box.h"
+
+1443392043 /home/alejo/Documents/ProyectoProgra3/Clean.h
+	"obstaculos.h"
+	"Entidad.h"
+
+1443394125 /home/alejo/Documents/ProyectoProgra3/obstaculos.h
+	<iostream>
+	<allegro5/allegro.h>
+	"allegro5/allegro_image.h"
+	"Entidad.h"
+
+1443394119 /home/alejo/Documents/ProyectoProgra3/Entidad.h
+	"Box.h"
+	<iostream>
+	<allegro5/allegro.h>
+	"allegro5/allegro_image.h"
+	"allegro5/allegro_native_dialog.h"
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<vector>
+
+1443392043 source:/home/alejo/Documents/ProyectoProgra3/Enemy.cpp
+	"Enemy.h"
+	"obstaculos.h"
+	<vector>
+	"Box.h"
+
+1443392043 /home/alejo/Documents/ProyectoProgra3/Enemy.h
+	"obstaculos.h"
+
+1443392043 source:/home/alejo/Documents/ProyectoProgra3/Entidad.cpp
+	"Entidad.h"
+
+1443392043 source:/home/alejo/Documents/ProyectoProgra3/FireBarrier.cpp
+	"FireBarrier.h"
+	"obstaculos.h"
+	"Box.h"
+
+1443392043 /home/alejo/Documents/ProyectoProgra3/FireBarrier.h
+	"obstaculos.h"
+
+1443392043 source:/home/alejo/Documents/ProyectoProgra3/FloatingObs.cpp
+	"FloatingObs.h"
+	"obstaculos.h"
+	"Box.h"
+
+1443392043 /home/alejo/Documents/ProyectoProgra3/FloatingObs.h
+	"obstaculos.h"
+
+1443392043 source:/home/alejo/Documents/ProyectoProgra3/lives.cpp
+	"lives.h"
+	"obstaculos.h"
+	"Box.h"
+
+1443392043 /home/alejo/Documents/ProyectoProgra3/lives.h
+	"obstaculos.h"
+
+1443395859 source:/home/alejo/Documents/ProyectoProgra3/main.cpp
+	<iostream>
+	<allegro5/allegro.h>
+	"allegro5/allegro_image.h"
+	"allegro5/allegro_native_dialog.h"
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	"coins.h"
+	"lives.h"
+	"obstaculos.h"
+	"Entidad.h"
+	"Personaje.h"
+	"FloatingObs.h"
+	"Enemy.h"
+	"WaterBarrier.h"
+	<unistd.h>
+	<sstream>
+
+1443392043 /home/alejo/Documents/ProyectoProgra3/coins.h
+	"obstaculos.h"
+
+1443394138 /home/alejo/Documents/ProyectoProgra3/Personaje.h
+	"Box.h"
+	"Entidad.h"
+	<iostream>
+	<allegro5/allegro.h>
+	"allegro5/allegro_image.h"
+	"allegro5/allegro_native_dialog.h"
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<vector>
+	<map>
+
+1443392043 /home/alejo/Documents/ProyectoProgra3/WaterBarrier.h
+	"obstaculos.h"
+
+1443392043 source:/home/alejo/Documents/ProyectoProgra3/obstaculos.cpp
+	"obstaculos.h"
+
+1443392043 source:/home/alejo/Documents/ProyectoProgra3/Personaje.cpp
+	"Personaje.h"
+
+1443392043 source:/home/alejo/Documents/ProyectoProgra3/WaterBarrier.cpp
+	"WaterBarrier.h"
+

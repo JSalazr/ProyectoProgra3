@@ -41,12 +41,15 @@ ALLEGRO_BITMAP  *menu   = NULL;
 ALLEGRO_BITMAP  *btnplay   = NULL;
 ALLEGRO_BITMAP  *btnexit   = NULL;
 
-ALLEGRO_SAMPLE *music = NULL;
-ALLEGRO_SAMPLE_ID imusic;
-ALLEGRO_SAMPLE *effect = NULL;
-ALLEGRO_SAMPLE_ID ieffect;
-ALLEGRO_SAMPLE *game = NULL;
-ALLEGRO_SAMPLE_ID igame;
+//ALLEGRO_SAMPLE *music = NULL;
+//ALLEGRO_SAMPLE_ID imusic;
+ALLEGRO_SAMPLE* optionSound = NULL;
+ALLEGRO_SAMPLE* levelUp = NULL;
+ALLEGRO_SAMPLE_INSTANCE* optionSoundInstance = NULL;
+ALLEGRO_SAMPLE_INSTANCE* levelUpInstance = NULL;
+//ALLEGRO_SAMPLE_ID ieffect;
+//ALLEGRO_SAMPLE *game = NULL;
+//ALLEGRO_SAMPLE_ID igame;
 
 ALLEGRO_KEYBOARD_STATE keystate;
 
@@ -210,6 +213,14 @@ int main()
     menu = al_load_bitmap("resources/menu.png");
     btnplay = al_load_bitmap("resources/play.png");
     btnexit = al_load_bitmap("resources/exit.png");
+    optionSound = al_load_sample("resources/option.wav");
+    levelUp = al_load_sample("resources/levelup.wav");
+    optionSoundInstance = al_create_sample_instance(optionSound);
+    levelUpInstance = al_create_sample_instance(levelUp);
+    al_set_sample_instance_playmode(optionSoundInstance, ALLEGRO_PLAYMODE_ONCE);
+    al_set_sample_instance_playmode(levelUpInstance, ALLEGRO_PLAYMODE_ONCE);
+    al_attach_sample_instance_to_mixer(optionSoundInstance, al_get_default_mixer());
+    al_attach_sample_instance_to_mixer(levelUpInstance, al_get_default_mixer());
 
     int nivel = 1;
     bool lvlup = 1;
@@ -272,6 +283,7 @@ int main()
                 {
                     splash1=false;
                     splash2=true;
+                    al_play_sample_instance(optionSoundInstance);
                 }
             }
             if(splash2)
@@ -281,6 +293,7 @@ int main()
                 al_draw_bitmap(btnexit, 215, 650, 100);
                 if(ev.keyboard.keycode == ALLEGRO_KEY_ENTER)
                 {
+                    al_play_sample_instance(optionSoundInstance);
                     currentuser = ingresarNombre();
                     splash2=false;
                 }
@@ -297,31 +310,19 @@ int main()
                 int cant = nivel*3;
                 for(int i = 0; i < cant; i++)
                 {
-<<<<<<< HEAD
-                    int randy = rand()%2;
-=======
                     int randy = rand()%1;
->>>>>>> 4c9fdf2c9629dd948801363e52827bbe6412a194
 
                     switch (randy)
                     {
                         case 0:
                             patitos.insert(patitos.begin(), new Enemy());
-<<<<<<< HEAD
-                            (*(patitos.begin()))->cuadro->y= 1280 + (i*300+rand()%(200));
-=======
                             (*(patitos.begin()))->cuadro->y= 1280 + (i*200+rand()%(200));
->>>>>>> 4c9fdf2c9629dd948801363e52827bbe6412a194
                             (*(patitos.begin()))->cuadro->x=(rand()%(768));
                             break;
 
                         case 1:
                             patitos.insert(patitos.begin(), new WaterBarrier());
-<<<<<<< HEAD
-                            (*(patitos.begin()))->cuadro->y= 1280 + (i*300+rand()%(200));
-=======
                             (*(patitos.begin()))->cuadro->y= 1280 + (i*200+rand()%(200));
->>>>>>> 4c9fdf2c9629dd948801363e52827bbe6412a194
 
                         case 3:
                         break;
@@ -332,6 +333,7 @@ int main()
                 displayLvl.str("");
                 displayLvl.clear();
                 displayLvl << "NIVEL: " << nivel;
+                al_play_sample_instance(levelUpInstance);
                 nivel++;
             }
 
@@ -349,31 +351,6 @@ int main()
             {
                 (*i)->act();
                 (*i)->draw();
-<<<<<<< HEAD
-
-                if((*i) != personaje && collision((*i), personaje))
-                {
-//                    if((*i)->codigo == 1)
-//                    {
-//                        if(!(personaje->tipoActual == RED || personaje->tipoActual == REDD || personaje->tipoActual == REDI))
-//                            cout<<"perdiste"<<endl;
-//                    }
-//                    else if((*i)->codigo == 2)
-//                    {
-//                        if(!(personaje->tipoActual == GREEN || personaje->tipoActual == GREEND || personaje->tipoActual == GREENI))
-//                            cout<<"perdiste"<<endl;
-//                    }
-                    if((*i)->codigo == 3)
-                    {
-                        if(!(personaje->tipoActual == BLUE || personaje->tipoActual == BLUED || personaje->tipoActual == BLUEI))
-                            cout<<"perdiste"<<endl;
-                    }
-                    else
-                        cout<<"perdiste"<<endl;
-
-                }
-                 //cout<<(&(*i)->codigo)<<endl;
-=======
                 if((*i) != personaje && collision((*i), personaje))
                 {
 //                    if((*i)->codigo == 3)
@@ -387,10 +364,12 @@ int main()
 
                 }
 //                 cout<<((*i)->codigo)<<endl;
->>>>>>> 4c9fdf2c9629dd948801363e52827bbe6412a194
 
                 if((*i)->cuadro->y>900)
+                {
                     al_draw_text(normalFont, al_map_rgb(102,204,0), width/2, (height/2)-35,ALLEGRO_ALIGN_CENTER, displayLvl.str().c_str());
+                }
+
 
 //            if((*patitos.end()-1)->cuadro->x > ((*i)->cuadro->x+(*i)->cuadro->width))
 //                cout<<"persdiste";
