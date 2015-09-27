@@ -28,7 +28,11 @@ class Entidad
         virtual void act() = 0;
         virtual void draw() = 0;
         int codigo;
+<<<<<<< HEAD
         int tipoActual;
+=======
+        int tipo;
+>>>>>>> 4c9fdf2c9629dd948801363e52827bbe6412a194
         Entidad();
         virtual ~Entidad();
     protected:

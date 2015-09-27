@@ -23,7 +23,11 @@ enum TIPO {REDI, RED, REDD, GREENI, GREEN, GREEND, BLUEI, BLUE, BLUED};
 class Personaje : public Entidad
 {
     public:
+<<<<<<< HEAD
         int vida, frame, animacionActual;
+=======
+        int vida, tipoActual, frame, animacionActual;
+>>>>>>> 4c9fdf2c9629dd948801363e52827bbe6412a194
         vector<ALLEGRO_BITMAP*> skins[9];
         Personaje(ALLEGRO_EVENT *ev);
 //        map<string, char> controles;

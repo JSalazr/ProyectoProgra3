@@ -297,19 +297,31 @@ int main()
                 int cant = nivel*3;
                 for(int i = 0; i < cant; i++)
                 {
+<<<<<<< HEAD
                     int randy = rand()%2;
+=======
+                    int randy = rand()%1;
+>>>>>>> 4c9fdf2c9629dd948801363e52827bbe6412a194
 
                     switch (randy)
                     {
                         case 0:
                             patitos.insert(patitos.begin(), new Enemy());
+<<<<<<< HEAD
                             (*(patitos.begin()))->cuadro->y= 1280 + (i*300+rand()%(200));
+=======
+                            (*(patitos.begin()))->cuadro->y= 1280 + (i*200+rand()%(200));
+>>>>>>> 4c9fdf2c9629dd948801363e52827bbe6412a194
                             (*(patitos.begin()))->cuadro->x=(rand()%(768));
                             break;
 
                         case 1:
                             patitos.insert(patitos.begin(), new WaterBarrier());
+<<<<<<< HEAD
                             (*(patitos.begin()))->cuadro->y= 1280 + (i*300+rand()%(200));
+=======
+                            (*(patitos.begin()))->cuadro->y= 1280 + (i*200+rand()%(200));
+>>>>>>> 4c9fdf2c9629dd948801363e52827bbe6412a194
 
                         case 3:
                         break;
@@ -337,6 +349,7 @@ int main()
             {
                 (*i)->act();
                 (*i)->draw();
+<<<<<<< HEAD
 
                 if((*i) != personaje && collision((*i), personaje))
                 {
@@ -360,6 +373,21 @@ int main()
 
                 }
                  //cout<<(&(*i)->codigo)<<endl;
+=======
+                if((*i) != personaje && collision((*i), personaje))
+                {
+//                    if((*i)->codigo == 3)
+//                    {
+//                     cout<<"11111111111111"<<endl;
+//                        if(!(personaje->tipo == BLUE || personaje->tipo == BLUED || personaje->tipo == BLUEI))
+//                            cout<<"perdiste"<<endl;
+//                    }
+////                    else
+////                         cout<<"perdiste"<<endl;
+
+                }
+//                 cout<<((*i)->codigo)<<endl;
+>>>>>>> 4c9fdf2c9629dd948801363e52827bbe6412a194
 
                 if((*i)->cuadro->y>900)
                     al_draw_text(normalFont, al_map_rgb(102,204,0), width/2, (height/2)-35,ALLEGRO_ALIGN_CENTER, displayLvl.str().c_str());
