@@ -45,8 +45,10 @@ ALLEGRO_BITMAP  *btnexit   = NULL;
 //ALLEGRO_SAMPLE_ID imusic;
 ALLEGRO_SAMPLE* optionSound = NULL;
 ALLEGRO_SAMPLE* levelUp = NULL;
+ALLEGRO_SAMPLE* keyType = NULL;
 ALLEGRO_SAMPLE_INSTANCE* optionSoundInstance = NULL;
 ALLEGRO_SAMPLE_INSTANCE* levelUpInstance = NULL;
+ALLEGRO_SAMPLE_INSTANCE* keyTypeInstance = NULL;
 //ALLEGRO_SAMPLE_ID ieffect;
 //ALLEGRO_SAMPLE *game = NULL;
 //ALLEGRO_SAMPLE_ID igame;
@@ -175,6 +177,7 @@ string ingresarNombre()
             for(int x = 1; x <= 27; x++)//for para obtener los valores de todas las letras
                 if (press(x))//comparamos que tecla está siendo presionada
                 {
+                    al_play_sample_instance(keyTypeInstance);
                     char e = x+64; //de ser así, sumarle al valor ASCII equivalente
                     name.push_back(e);//concatenarla al nombre
                 }
@@ -215,12 +218,16 @@ int main()
     btnexit = al_load_bitmap("resources/exit.png");
     optionSound = al_load_sample("resources/option.wav");
     levelUp = al_load_sample("resources/levelup.wav");
+    keyType = al_load_sample("resources/keytype.wav");
     optionSoundInstance = al_create_sample_instance(optionSound);
     levelUpInstance = al_create_sample_instance(levelUp);
+    keyTypeInstance = al_create_sample_instance(keyType);
     al_set_sample_instance_playmode(optionSoundInstance, ALLEGRO_PLAYMODE_ONCE);
     al_set_sample_instance_playmode(levelUpInstance, ALLEGRO_PLAYMODE_ONCE);
+    al_set_sample_instance_playmode(keyTypeInstance, ALLEGRO_PLAYMODE_ONCE);
     al_attach_sample_instance_to_mixer(optionSoundInstance, al_get_default_mixer());
     al_attach_sample_instance_to_mixer(levelUpInstance, al_get_default_mixer());
+    al_attach_sample_instance_to_mixer(keyTypeInstance, al_get_default_mixer());
 
     int nivel = 1;
     bool lvlup = 1;
